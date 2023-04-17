@@ -11,7 +11,8 @@ FillArray(Array);
 PrintArray(Array);
 SumElementsRowsArray(Array);
 Console.WriteLine();
-//PrintArray(Sum);
+
+PrintArr(SumElementsRowsArray(Array));
 
 
 
@@ -37,21 +38,28 @@ void PrintArray(int[,] array)
     }
 }
 
-void SumElementsRowsArray(int[,]array)
-{   
+int[] SumElementsRowsArray(int[,]array)
+{   int[] Sum = new int[4];
     for (int i = 0; i < array.GetLength(0); i++)
         {  
-            //int[] Sum = new int[4];
-            //for (int index = 0; index < 4; index++)
-            //{
+            {
                     int sum = 0;
                     for (int j = 0; j < array.GetLength(1); j++)
                     {
                     sum = sum + array[i,j];
                     }
-                    Console.WriteLine(sum);
-           // Sum[index] = sum;
-           // Console.Write($"**{Sum[index]}**");
-           // }
+            Sum[i] = sum;
+           }
         }
+    return Sum;
+}
+void PrintArr(int[] col) 
+{
+    int count = col.Length;
+    int position = 0;
+     while (position < count)
+    {
+    Console.Write($"{col[position]} ");
+    position++;
+    }
 }
