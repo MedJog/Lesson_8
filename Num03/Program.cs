@@ -10,7 +10,6 @@ int[,] Matrix1 = new int[3,3];
 int[,] Matrix2 = new int[3,3];
 FillArray(Matrix1);
 FillArray(Matrix2);
-
 PrintArray(Matrix1);
 Console.WriteLine();
 PrintArray(Matrix2);
