@@ -11,7 +11,7 @@ FillArray(Array);
 PrintArray(Array);
 SumElementsRowsArray(Array);
 Console.WriteLine();
-PrintArr(SumElementsRowsArray(Array));
+// PrintArr(SumElementsRowsArray(Array));
 Console.WriteLine();
 IndexRowsMinSum(SumElementsRowsArray(Array));
 
@@ -55,7 +55,7 @@ int[] SumElementsRowsArray(int[,]array)
         }
     return Sum;
 }
-void PrintArr(int[] col) 
+/* void PrintArr(int[] col) 
 {
     int count = col.Length;
     int position = 0;
@@ -64,7 +64,7 @@ void PrintArr(int[] col)
     Console.Write($"{col[position]} ");
     position++;
     }
-} 
+} */
 
 void IndexRowsMinSum(int[]array)
 {
