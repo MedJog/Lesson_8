@@ -39,18 +39,17 @@ void PrintArray(int[,] array)
 void SortRowsArrayMaxMin(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int count = 0; count < array.GetLength(1) - 2 ; count++ )
+    { 
+        for (int j = 0; j <= array.GetLength(1) - 2; j++)
             {
-                for (int j = 0; j < array.GetLength(1) - 1 ; j++)
+                for (int J = j + 1; J <= array.GetLength(1) - 1; J++)
                     {
-                        if (array[i,j] < array[i,j+1])
+                        if (array[i,j] < array[i,J])
                         {
                         int basket = array[i,j];
-                        array[i,j] = array[i,j+1];
-                        array[i,j+1] = basket;
+                        array[i,j] = array[i,J];
+                        array[i,J] = basket;
                         }
-
                     }
             }
     }
