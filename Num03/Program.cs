@@ -10,11 +10,12 @@ int[,] Matrix1 = new int[3,3];
 int[,] Matrix2 = new int[3,3];
 FillArray(Matrix1);
 FillArray(Matrix2);
+Console.WriteLine("Первая матрица");
 PrintArray(Matrix1);
-Console.WriteLine();
+Console.WriteLine("Вторая матрица");
 PrintArray(Matrix2);
 MatrixMultiplication(Matrix1, Matrix2);
-Console.WriteLine();
+Console.WriteLine("Результирующая матрица");
 PrintArray(MatrixMultiplication(Matrix1, Matrix2));
 
 void FillArray(int[,] array)
@@ -40,23 +41,22 @@ void PrintArray(int[,] array)
 }
 
 int[,] MatrixMultiplication(int[,] matrix1, int[,]matrix2)
-{   int I = 0;
+{   
+    int I = 0;
     int j = 0;
     int[,] MatrixMult = new int[3,3];
     for (int i = 0; i < matrix1.GetLength(0); i++)
         {
-        //Console.WriteLine($"строка первой матрицы {i}");
         for (int J = 0; J < matrix2.GetLength(1); J++)
             {
-           // Console.WriteLine($"столбец второй матрицы {j}");
             int result = matrix1[i,j] * matrix2[I,J] + matrix1[i,j+1] * matrix2[I+1,J];
-            //Console.WriteLine($"вот и он {result} ");
             MatrixMult[i,J] = result;
             }
 
         }
         return MatrixMult;
-    }
+}    
+
 
 
    
