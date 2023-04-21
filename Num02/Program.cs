@@ -11,8 +11,6 @@ FillArray(Array);
 PrintArray(Array);
 SumElementsRowsArray(Array);
 Console.WriteLine();
-// PrintArr(SumElementsRowsArray(Array));
-Console.WriteLine();
 IndexRowsMinSum(SumElementsRowsArray(Array));
 
 
@@ -55,16 +53,6 @@ int[] SumElementsRowsArray(int[,]array)
         }
     return Sum;
 }
-/* void PrintArr(int[] col) 
-{
-    int count = col.Length;
-    int position = 0;
-     while (position < count)
-    {
-    Console.Write($"{col[position]} ");
-    position++;
-    }
-} */
 
 void IndexRowsMinSum(int[]array)
 {
@@ -80,6 +68,6 @@ void IndexRowsMinSum(int[]array)
         }
         i++;
     }
-    //Console.WriteLine(minSum);
+    
     Console.WriteLine($"Номер строки с наименьшей суммой элементов {minIndex}");
 }
