@@ -8,9 +8,10 @@
 int[,] Array = new int[4,4];
 
 
-HelixArray(Array, 0, 0);
+HelixArray(Array);
 PrintArray(Array);
 Console.WriteLine();
+PrintArray(HelixArray2(Array, 4, 4));
 
 void PrintArray(int[,] array)
 {
@@ -25,15 +26,14 @@ void PrintArray(int[,] array)
 } 
 
 
-int[,] HelixArray(int[,]array, int m, int n)
+int[,] HelixArray(int[,]array)
 {   
-    int i = m; // индекс строки
-    int j = n; // индекс столбца
-
-    int M = Array.GetLength(0); // строки массива
-    int N = Array.GetLength(1); // столбцы массива
+    int i = 0; 
+    int j = 0; 
+    int M = Array.GetLength(0);
+    int N = Array.GetLength(1); 
     int element = 0;
-    for (j = n; j < N; j++)
+    for (j = 0; j < N; j++)
         {
             Array[i,j] = element + 1;
             element++; 
@@ -56,7 +56,7 @@ int[,] HelixArray(int[,]array, int m, int n)
         }
     M = M - 1;
     N = N - 1;
-    for (j = n+1; j < N; j++)
+    for (j = j+1; j < N; j++)
         {
             Array[i+1,j] = element + 1;
             element++; 
@@ -71,5 +71,44 @@ int[,] HelixArray(int[,]array, int m, int n)
         Array[i-1,j-1] = element + 1;
         element++; 
         }
+return array;
+}
+
+
+int[,] HelixArray2(int[,]array, int Rows, int Columns)
+{  
+int minRow = 0; 
+int maxRow = Rows - 1; 
+int minCol = 0;
+int maxCol = Columns - 1;
+int Element = 0;
+int maxElement = Rows * Columns;
+while (Element < maxElement)
+{
+    for (int i = minCol; i <= maxCol; i++) // движение вправо
+        {
+        Array[minRow,i] = Element + 1;
+        Element++; 
+        }
+    minRow = minRow + 1;    
+    for (int i = minRow; i <= maxRow; i++) //движение вниз
+        {
+        Array[i,maxCol] = Element + 1;
+        Element++; 
+        }
+    maxCol = maxCol - 1;
+    for (int i = maxCol; i >= minCol; i--) // движение влево
+        {
+        Array[maxRow,i] = Element + 1;
+        Element++; 
+        }
+    maxRow = maxRow - 1;
+    for (int i = maxRow; i >= minRow; i--) // движение вверх
+        {
+        Array[i,minCol] = Element + 1;
+        Element++; 
+        }
+    minCol = minCol + 1; // уменьшение границы
+} 
 return array;
 }
